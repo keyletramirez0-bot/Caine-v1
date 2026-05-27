@@ -1,0 +1,49 @@
+import time
+import sys
+
+def escribir(texto):
+    for letra in texto:
+        sys.stdout.write(letra)
+        sys.stdout.flush()
+        time.sleep(0.03)
+    print()
+
+escribir("¡BIENVENIDOS AL ASOMBROSO CIRCO DIGITAL!")
+escribir("Caine: ¡Hola, mi querido espectador! Estás atrapado en este mundo virtual. ¿Qué aventura elegirá tu mente hoy?")
+
+# Empezamos con 100 de cordura
+cordura = 100
+
+while True:
+    print(f"\n--- ESTADO ACTUAL: CORDURA = {cordura}% ---")
+    
+    # Si la cordura llega a 0, pierdes automáticamente
+    if cordura <= 0:
+        print("\n==================================================")
+        escribir("¡OH NO! Tu cordura ha llegado a 0%...")
+        escribir("Te has ABSTRAIDO por completo. Te conviertes en una masa negra llena de ojos.")
+        escribir("Caine: ¡Vaya, otro que pierde la cabeza! Al sótano con los demás... *Te arroja al vacío*")
+        print("==================================================")
+        print("\n[GAME OVER] Te has abstraído.")
+        break
+
+    print("\n[1] Hablar con Pomni (-10 de Cordura)")
+    print("[2] Buscar la puerta de salida (-30 de Cordura)")
+    
+    opcion = input("\n¿Qué decides hacer? (1 o 2): ")
+    
+    if opcion == "1":
+        print("\n==================================================")
+        escribir("Decides hablar con Pomni. Ella está muy nerviosa y te contagia su pánico.")
+        cordura -= 10
+        print("==================================================")
+        
+    elif opcion == "2":
+        print("\n==================================================")
+        escribir("Corres desesperadamente buscando la puerta de salida en la oscuridad...")
+        escribir("Te das cuenta de que es solo un pasillo infinito. Te desesperas.")
+        cordura -= 30
+        print("==================================================")
+        
+    else:
+        print("\nOpción no válida. El miedo te paraliza y no haces nada...")
